@@ -1,7 +1,7 @@
 import React from "react";
 
-const HomePgae = () => {
+const HomePage = () => {
   return <div>HomePgae</div>;
 };
 
-export default HomePgae;
+export default HomePage;
