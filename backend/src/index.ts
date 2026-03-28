@@ -11,8 +11,8 @@ app.use(clerkMiddleware());
 app.use(express.json());
 app.use(
   cors({
-    origin:
-      ENV.FRONTEND_URL || "http://localhost:5173" || "http://localhost:5174",
+    origin: ENV.FRONTEND_URL ?? "http://localhost:5174",
+    credentials: true,
   }),
 );
 
