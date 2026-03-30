@@ -1,26 +1,6 @@
 import api from "./axios";
-
-export type SyncUserPayload = {
-  id: string;
-  email: string;
-  name?: string;
-  imageUrl?: string;
-};
-
-type ProductPayload = {
-  id: string;
-  title: string;
-  description: string;
-  imageUrl: string;
-  userId: string;
-};
-
-type CommentPayload = {
-  id: string;
-  content: string;
-  userId: string;
-  productId: string;
-};
+import type { CreateComment, SyncUserPayload } from "../types/otherTypes";
+import type { CreateProduct, UpdateProduct } from "../types/productTypes";
 
 export const syncUser = async (userData: SyncUserPayload) => {
   const { data } = await api.post("/users/sync", userData);
@@ -42,15 +22,12 @@ export const getMyProducts = async () => {
   return data;
 };
 
-export const createProduct = async (productData: ProductPayload) => {
+export const createProduct = async (productData: CreateProduct) => {
   const { data } = await api.post("/products", productData);
   return data;
 };
 
-export const updateProduct = async (
-  id: string,
-  productData: Partial<ProductPayload>,
-) => {
+export const updateProduct = async (id: string, productData: UpdateProduct) => {
   const { data } = await api.patch(`/products/${id}`, productData);
   return data;
 };
@@ -60,7 +37,7 @@ export const deleteProduct = async (id: string) => {
   return data;
 };
 
-export const createComment = async (commentData: CommentPayload) => {
+export const createComment = async (commentData: CreateComment) => {
   const { data } = await api.post("/comments", commentData);
   return data;
 };
