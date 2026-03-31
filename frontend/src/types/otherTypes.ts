@@ -14,7 +14,7 @@ export type SyncUserPayload = {
   imageUrl?: string;
 };
 
-export type Comment = {
+export type ProductComment = {
   id: string;
   content: string;
   userId: string;
@@ -27,4 +27,8 @@ export type CreateComment = {
   content: string;
   userId: string;
   productId: string;
+};
+
+export type CommentFull = ProductComment & {
+  user: User;
 };
