@@ -1,4 +1,4 @@
-import type { User } from "./otherTypes";
+import type { CommentFull, User } from "./otherTypes";
 
 export type ProductBase = {
   title: string;
@@ -19,5 +19,5 @@ export type Product = ProductBase & {
 
 export type ProductFull = Product & {
   user: User;
-  comments: Comment[];
+  comments: CommentFull[];
 };
