@@ -1,11 +1,14 @@
-import { SignInButton } from "@clerk/react";
+import { SignInButton, useAuth } from "@clerk/react";
 import { PackageIcon, SparklesIcon } from "lucide-react";
 import ProductsCondition from "../components/ProductsCondition";
 import { useProducts } from "../hooks/useProducts";
 import LoadingSpinner from "../components/LoadingSpinner";
 import ProductCard from "../components/ProductCard";
+import { Link } from "react-router";
 
 const HomePage = () => {
+  const { isSignedIn } = useAuth();
+
   const { data: products, isLoading, error } = useProducts();
 
   if (isLoading) return <LoadingSpinner />;
@@ -36,12 +39,19 @@ const HomePage = () => {
             <p className="py-4 text-base-content/60">
               Upload, discover, and connect with creators.
             </p>
-            <SignInButton mode="modal">
-              <button className="btn btn-primary">
+            {isSignedIn ? (
+              <Link to="/create" className="btn btn-primary">
                 <SparklesIcon className="size-4" />
                 Start Selling
-              </button>
-            </SignInButton>
+              </Link>
+            ) : (
+              <SignInButton mode="modal">
+                <button className="btn btn-primary">
+                  <SparklesIcon className="size-4" />
+                  Start Selling
+                </button>
+              </SignInButton>
+            )}
           </div>
         </div>
       </div>
