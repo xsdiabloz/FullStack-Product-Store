@@ -4,11 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "install-all": "npm i && npm i -C backend && npm i -C frontend",
-    "build": "npm run build -C frontend && npm run build -C backend",
-    "start": "npm start -C backend"
-  },
+  "test": "echo \"Error: no test specified\" && exit 1",
+  "install-all": "npm i && npm i -C backend && npm i -C frontend",
+  "build": "npm run build -C frontend && npm run build -C backend",
+  "start": "node backend/dist/index.js" 
+},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/xsdiabloz/FullStack-Product-Store.git"
