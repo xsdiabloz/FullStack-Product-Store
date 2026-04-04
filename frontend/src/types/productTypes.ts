@@ -21,3 +21,5 @@ export type ProductFull = Product & {
   user: User;
   comments: CommentFull[];
 };
+
+export type ProductFormValue = Omit<ProductBase, "userId">;
