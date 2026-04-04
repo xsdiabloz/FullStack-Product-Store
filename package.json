@@ -1,0 +1,24 @@
+{
+  "name": "fullstack-product-store",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "install-all": "npm i && npm i -C backend && npm i -C frontend",
+    "build": "npm run build -C frontend && npm run build -C backend",
+    "start": "npm start -C backend"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xsdiabloz/FullStack-Product-Store.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/xsdiabloz/FullStack-Product-Store/issues"
+  },
+  "homepage": "https://github.com/xsdiabloz/FullStack-Product-Store#readme"
+}
