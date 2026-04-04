@@ -5,8 +5,11 @@ import {
   getAllProducts,
   getMyProducts,
   getProductById,
+  updateProduct,
 } from "../lib/api";
-import type { ProductFull } from "../types/productTypes";
+import type { ProductFormValue, ProductFull } from "../types/productTypes";
+
+type UpdateProductPayload = ProductFormValue & { id: string; userId: string };
 
 export const useProducts = () => {
   const result = useQuery<ProductFull[]>({
@@ -45,6 +48,13 @@ export const useMyProducts = () => {
   const result = useQuery({
     queryKey: ["myProducts"],
     queryFn: getMyProducts,
+  });
+  return result;
+};
+
+export const useUpdateMyProduct = () => {
+  const result = useMutation({
+    mutationFn: updateProduct,
   });
   return result;
 };

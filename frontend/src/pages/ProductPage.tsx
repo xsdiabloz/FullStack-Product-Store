@@ -124,7 +124,7 @@ const ProductPage = () => {
           </div>
         </div>
       </div>
-      {/*COMMENTS*/}
+
       <div className="card bg-base-300">
         <div className="card-body">
           <CommentsSection
